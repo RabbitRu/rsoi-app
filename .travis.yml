@@ -8,4 +8,4 @@ env:
 
 script:
     - dotnet build rsoi_app.sln -c Release
-    - dotnet test -c Release --no-build rsoi_app_tests/rsoi_app_tests.fsproj
+    - dotnet test -c Release --no-build rsoi_app_tests/rsoi_app_tests.csproj
