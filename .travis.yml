@@ -5,16 +5,14 @@ sudo: false
 env:
   global:
   - DOTNET_CLI_TELEMETRY_OPTOUT: 0
-script: 
-  - dotnet build rsoi_app.sln -c Release 
-  - dotnet test -c Release --no-build rsoi_app_tests/rsoi_app_tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-
+script:
+- dotnet build rsoi_app.sln -c Release
+- dotnet test -c Release --no-build rsoi_app_tests/rsoi_app_tests.csproj /p:CollectCoverage=true
+  /p:CoverletOutputFormat=opencover
 after_script:
-  - bash <(curl -s https://codecov.io/bash)
-
+- bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: heroku
-  api_key: 6b12b28b-4f34-4e30-8cef-8297b528bc27
-  app: rsoi_app
-  on:
-    repo: RabbitRu/rsoi_app
+  api_key:
+    secure: hPu3E4feM4qa0iUq5+EiOO+wR+7q0/fvKMn9VfQ97CJR5+CcLYBOKkwKw08DM/H/gTFnsCdMpHdbbbddKC9zoave9LREW1M5hhDfbQ2JC2pRRQuC5Grxo480t3/iSteneED8dj0zsHf8UNCrSBOgZAjBF3UnI7QNUThDyjtFduWzNHbVrE0tfbNEXxMl/bi6o5pV8CmR9v0Uao1fV4tpwVnBaraK4hkiEYfJpPkwh3FuoCGV3yuoVHIKBFJWn3/00wB6EyWKYTJIV23kPgn9J12Lq4DajKiEutP6FXOx+18umqMUsVubJp8kt8Ti5L636YNsr0uQfEqbsYdEqgf8ZUEDCLq/swTVDwhynj8H3tg9BxIH7B5IvqPWzCwMiZ5MNmslYI4E2355te3rMsG3aoHtSDQrL+VVRgsL+1IIhdBeJ0Nu8N/7z/0pAeZnKUYsk5ISNlFAw8V/1RLV+IeJZO9AMQwxe1JiL4Uxzi0S7Af/N3atdh+3Id9RH4uFfnt6QlhL7f7/EoHGVLSGpr+d5LDRfdS5V3jf2xWgXJbkatYRfQbugadkb3vCy3/9VhjiK2TKKq6OyO1JGfHzy3lz9ViKgLIdAMlC7Cmrr9OrI5R4twoVKjONIvcUdUgMbdlyj1rSRgGBAWrnlj7oGQzrnygPgjs/cUE+qpb0kzYAhWo=
+
