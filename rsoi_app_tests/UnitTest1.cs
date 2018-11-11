@@ -8,6 +8,7 @@ namespace rsoi_app_tests
         [Fact]
         public void Test1()
         {
+
             Console.Write("Test 1 OK!");
             return;
         }
