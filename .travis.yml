@@ -1,14 +1,17 @@
 language: csharp
 dotnet: 2.1.4
 sudo: false
-
 env:
-    global:
-        - DOTNET_CLI_TELEMETRY_OPTOUT: 0
-
-script:
-    - dotnet build rsoi_app.sln -c Release
-    - dotnet test -c Release --no-build rsoi_app_tests/rsoi_app_tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-
-    after_script:
-        - bash <(curl -s https://codecov.io/bash)
+  global:
+  - DOTNET_CLI_TELEMETRY_OPTOUT: 0
+script: "-- dotnet build rsoi_app.sln -c Release -- dotnet test -c Release --no-build
+  rsoi_app_tests/rsoi_app_tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover"
+after_script:
+- bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: heroku
+  api_key:
+    secure: dua9mmKiIYU/A2jup6Rq2tMoW2C1BJ04E5DaeqOzzCUpiKPk7M2h0gJg4AaDLG0qieAIpM89T15uIZ+HxlzVZHa1xMttl+5AYt5Rv04OYCqZtJejgw5iZOSaO61FTQQ/BMdHvyiOYYYXL+h8r8oT8UlcjSyq5EgoyMBbU/xcpl48jigI2ngHfSK1bofy5TskycDtvn9xXWJ8ydx4RGZ/HdEDtNgCIAFetF5Pt7x/qbeHjPs5W9Cgvv+38NLVxUac1E1QzUHuk3Sj9Jurjlb7lR8BnB86cKGSb1h5uUVND6PoiUZVOadUrVSWPv5Sed+waferH0f891NCl3iv18ajrhOKv/UamjtC59hIFBGaU+FU+fjTwUbnbb5wAZhTke9fwIbIzlQiT2e+Asi4eSs/ZSOVYRWIcK51iTFRON54rjM5EaO8DYtyBQjVx+BIz+LUmEye+t8ejuA7FNWzh9azqTP5BT0D6JruGe/nYr+gaetOSZpUA+6YSxfByhTix4UIzNY2hRlD7vabi+0EJVHN0JKdsguQMosVouJRxIMA7x2YyupyIKq5VK+2dG9CrawwumtUcJTPM7SDsT3imGthdrBRZ4TQtTgGgESxw1ZuKKmsiscWBTAs+Y9+G4hXUT1uAdXNGnMAmKHYBO8/vhrCsDOyFTwwTwvk/7iFTU3c98E=
+  app: rsoi_app
+  on:
+    repo: RabbitRu/rsoi_app
