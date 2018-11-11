@@ -5,9 +5,8 @@ env:
   global:
   - DOTNET_CLI_TELEMETRY_OPTOUT: 0
 script: "-- dotnet build rsoi_app.sln -c Release -- dotnet test -c Release --no-build
-  rsoi_app_tests/rsoi_app_tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover"
-after_script:
-- bash <(curl -s https://codecov.io/bash)
+  rsoi_app_tests/rsoi_app_tests.csproj "
+
 deploy:
   provider: heroku
   api_key:
