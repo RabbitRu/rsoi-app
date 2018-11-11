@@ -1,7 +1,9 @@
 language: csharp
 dotnet: 2.1.4
 mono: none
-sudo: false
+sudo: required
+services:
+  - docker
 env:
   global:
   - DOTNET_CLI_TELEMETRY_OPTOUT: 0
@@ -9,6 +11,8 @@ script:
 - dotnet build rsoi_app.sln -c Release
 - dotnet test -c Release --no-build rsoi_app_tests/rsoi_app_tests.csproj /p:CollectCoverage=true
   /p:CoverletOutputFormat=opencover
+-  dotnet publish -c Release
+- cp dockerfile ./rsoi-app/bin/release/netcoreapp2.0/publish/dockerfile
 after_script:
 - bash <(curl -s https://codecov.io/bash)
 deploy:
