@@ -5,6 +5,7 @@ env:
   global:
   - DOTNET_CLI_TELEMETRY_OPTOUT: 0
 script: 
+  - dotnet restore
   - dotnet build rsoi_app.sln -c Release 
   - dotnet test -c Release --no-build rsoi_app_tests/rsoi_app_tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
@@ -13,8 +14,7 @@ after_script:
 
 deploy:
   provider: heroku
-  api_key:
-    secure: 6b12b28b-4f34-4e30-8cef-8297b528bc27
+  api_key: 6b12b28b-4f34-4e30-8cef-8297b528bc27
   app: rsoi_app
   on:
     repo: RabbitRu/rsoi_app
