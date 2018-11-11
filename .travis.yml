@@ -15,6 +15,6 @@ deploy:
   provider: heroku
   api_key:
     secure: TpGugXbuNIBms783sjowXuXU7PBRCDYdR/8USamgR93uSZ1c6zw1gj8/gWhCHgrcWfaCssoAEJg4NkPSB1ZFmOAuKspnZ7cz6giiucLzRME9Kq/hm7+ilxzVyPMJtYIseAB8OHsej18ukWK7kx4YB5eLjg6W02ehuF2wzuzrrkOlk4lGIY8bYs21toPWKBcKnXe7uFKp9DxTR5Wht2eYqcVp4Db2Saspu9hJNRWub0vBhDnVCP4u3zEZ34TWRDIUm+c1Vk4CrJvS7gLUJZnF2BXa7eKC+SZ8rg+gHWw+V6N/Gbc5MMPNt1Jyxjerm3tlJ9iTWnZQHJbPKMgTNBuQ3Noxld8Bi+9vrZsa9O3YmS8XKfH3KMXqHOa+4kB0+9T3eWYuAnG9OkR1HvwBrAPe157QpJH1bihNrgsMtnuTGNr7XwHoaPXNjoOm3ziKGCk/YkEIPkClW42ODRrMuiz4xFGtL8/JcwWEziEXGyb8oMahQ61wzDM4ywp5AdwiF5vJtrA1xRkm1R6HxyyshXuNLbzJ+NJftF3ibrgLcro/UzUB1hj5doOlLT7er/IFPV5rejXyfKQsYsXtNr0J1xnhl8FtsQOGhGsEQqEJmsvrU2dnkRJiXisxpL0pp4KNERKgIP7S6cXY78wILAEft+hWwOu/tg1dOT3LgaIPc8XbFnk=
-  app: rsoi_app
+  app: rsoi-app
   on:
-    repo: RabbitRu/rsoi_app
+    repo: RabbitRu/rsoi-app
