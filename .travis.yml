@@ -24,5 +24,5 @@ deploy:
   skip_cleanup: true  
   verbose: true
   username: rabbitru       # If AZURE_WA_USERNAME isn't set
-  password: $azure_wa_password   # If AZURE_WA_PASSWORD isn't set
+  password: $AZURE_WA_PASSWORD   # If AZURE_WA_PASSWORD isn't set
   site: rsoi-app-travis      # If AZURE_WA_SITE isn't set
