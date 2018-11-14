@@ -9,8 +9,9 @@ script:
 - dotnet test -c Release --no-build rsoi_app_tests/rsoi_app_tests.csproj /p:CollectCoverage=true
   /p:CoverletOutputFormat=opencover
 after_script:
-- bash <(curl -s https://codecov.io/bash)
-
+  - bash <(curl -s https://codecov.io/bash)
+before_deploy:
+  - cd build
 deploy:
   provider: azure_web_apps
   skip_cleanup: true
