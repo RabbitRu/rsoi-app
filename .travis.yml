@@ -4,17 +4,25 @@ mono: none
 env:
   global:
   - DOTNET_CLI_TELEMETRY_OPTOUT: 0
+
+install:
+ - dotnet restore
+
 script:
 - dotnet build rsoi_app.sln -c Release
 - dotnet test -c Release --no-build rsoi_app_tests/rsoi_app_tests.csproj /p:CollectCoverage=true
   /p:CoverletOutputFormat=opencover
+
 after_script:
   - bash <(curl -s https://codecov.io/bash)
+
 before_deploy:
-  - cd build
+  - cd rsoi_app
+
 deploy:
   provider: azure_web_apps
-  skip_cleanup: true
+  skip_cleanup: true  
+  verbose: true
   username: azure_deployment_user       # If AZURE_WA_USERNAME isn't set
   password: azure_deployment_password   # If AZURE_WA_PASSWORD isn't set
   site: azure_deployment_sitename       # If AZURE_WA_SITE isn't set
