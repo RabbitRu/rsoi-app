@@ -7,11 +7,7 @@ env:
 
 script:
 - dotnet build rsoi_app.sln -c Release
-- dotnet test -c Release --no-build rsoi_app_tests/rsoi_app_tests.csproj /p:CollectCoverage=true
-  /p:CoverletOutputFormat=opencover
-
-after_script:
-  - bash <(curl -s https://codecov.io/bash)
+- dotnet test -c Release --no-build rsoi_app_tests/rsoi_app_tests.csproj 
 
 before_deploy:
   - cd rsoi_app
