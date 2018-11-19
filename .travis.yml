@@ -1,6 +1,7 @@
 language: csharp
 dotnet: 2.1.4
 mono: none
+sudo: required
 env:
   global:
   - DOTNET_CLI_TELEMETRY_OPTOUT: 0
