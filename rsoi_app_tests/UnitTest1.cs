@@ -1,5 +1,7 @@
+using rsoi_app;
 using System;
 using Xunit;
+
 
 namespace rsoi_app_tests
 {
@@ -8,8 +10,9 @@ namespace rsoi_app_tests
         [Fact]
         public void Test1()
         {
-
-            Console.Write("Test 1 OK!");
+            double x = BusinesLogic.Cube(3);
+            Assert.Equal(x, 27);
+            Console.Write(x.ToString());
             return;
         }
     }
