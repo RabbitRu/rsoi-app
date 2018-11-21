@@ -12,6 +12,7 @@ script:
 
 before_deploy:
   - cd rsoi_app
+  - git push --force https://rabbitru:rabbit87666@rsoi-app-travis.scm.azurewebsites.net:443/rsoi-app-travis.git HEAD:master
 
 deploy:
   provider: azure_web_apps
