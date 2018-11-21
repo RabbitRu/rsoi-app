@@ -12,13 +12,9 @@ script:
 
 before_deploy:
   - cd rsoi_app
-  - git push --force https://rabbitru:rabbit87666@rsoi-app-travis.scm.azurewebsites.net:443/rsoi-app-travis.git HEAD:master
 
 deploy:
   provider: azure_web_apps
-  skip_cleanup: true  
-  force: true
-  keep-history: false
   verbose: true
   username: rabbitru       # If AZURE_WA_USERNAME isn't set
   password: rabbit87666   # If AZURE_WA_PASSWORD isn't set
