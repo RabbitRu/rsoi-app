@@ -15,7 +15,11 @@ before_deploy:
 
 deploy:
   provider: azure_web_apps
+  skip_cleanup: true  
   verbose: true
   username: rabbitru       # If AZURE_WA_USERNAME isn't set
   password: rabbit87666   # If AZURE_WA_PASSWORD isn't set
   site: rsoi-app-travis      # If AZURE_WA_SITE isn't set
+
+git:
+  depth: 9999999
