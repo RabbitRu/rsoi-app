@@ -11,11 +11,11 @@ namespace rsoi_app
         {
             if (x == null)
             {
-                throw new Exception("Получен null");
+                throw new Exception("Recieved null");
             }
             else if (x < 1)
             {
-                throw new Exception("Отрицательное число");
+                throw new Exception("Negative Number");
             }
 
             int result = 1;

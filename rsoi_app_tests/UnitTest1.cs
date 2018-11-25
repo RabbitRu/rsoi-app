@@ -24,7 +24,7 @@ namespace rsoi_app_tests
             }
             catch (Exception e)
             {
-                Assert.Equal("Отрицательное число", e.Message);
+                Assert.Equal("Negative Number", e.Message);
             }
             return;
         }
@@ -38,7 +38,7 @@ namespace rsoi_app_tests
             }
             catch (Exception e)
             {
-                Assert.Equal("Получен null", e.Message);
+                Assert.Equal("Recieved null", e.Message);
             }
             return;
         }
