@@ -24,7 +24,7 @@ namespace rsoi_app_tests
             }
             catch (Exception e)
             {
-                Assert.Equal("Negative Number", e.Message);
+                Assert.Equal("Number is less than 2", e.Message);
             }
             return;
         }
