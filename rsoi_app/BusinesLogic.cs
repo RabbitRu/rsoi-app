@@ -15,7 +15,7 @@ namespace rsoi_app
             }
             else if (x < 1)
             {
-                throw new Exception("Number is less than 2");
+                throw new Exception("Number is less than 1");
             }
 
             int result = 1;
