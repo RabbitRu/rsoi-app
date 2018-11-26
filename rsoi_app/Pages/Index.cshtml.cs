@@ -9,7 +9,7 @@ namespace rsoi_app.Pages
 {
     public class IndexModel : PageModel
     {
-        public string Message => "Введите число для возведения в куб";
+        public string Message => "Введите число для вычисления факториала";
 
         public string Result { get; set; }
 
